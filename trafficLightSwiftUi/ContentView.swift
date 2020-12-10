@@ -17,11 +17,11 @@ struct ContentView: View {
             VStack{
                 
                 ColorCircles(color: .red)
-                    .opacity(tapCount == 1 || tapCount == 2 ? 0.3:1)
+                    .opacity(tapCount == 1 ? 1:0.3)
                 ColorCircles(color: .yellow)
-                    .opacity(tapCount == 2 || tapCount == 0 ? 0.3:1)
+                    .opacity(tapCount == 2  ? 1:0.3)
                 ColorCircles(color: .green)
-                    .opacity(tapCount == 1 || tapCount == 0 ? 0.3:1)
+                    .opacity(tapCount == 3 ? 1:0.3)
                     .padding(.top, 0.0)
                 Spacer()
                 
@@ -31,8 +31,10 @@ struct ContentView: View {
                         tapCount += 1
                     case 1:
                         tapCount += 1
+                    case 2:
+                        tapCount += 1
                     default:
-                        tapCount = 0
+                        tapCount = 1
                     }
                     
                 }, label: {
